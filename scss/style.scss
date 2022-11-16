@@ -2,40 +2,94 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 
-body {
-    background-color: red;
+:root {
+    --main-color: #E31235;
+}
+
+.def-btn {
+    all: unset;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: var(--main-color);
+    padding: 10px 24px;
+    border-radius: 4px;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 header {
-    width: 100%;
-    padding: 20px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #c4c4c4;
+    flex-direction: column;
+    width: 100%;
 
-    .left {
+    .top-nav {
         display: flex;
+        justify-content: space-between;
         align-items: center;
-        gap: 15px;
-        a {
-            text-decoration: none;
-            color: black;
+        width: 100%;
+        padding: 10px 200px;
+        background-color: #333333;
+        .left, .right {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            a {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                font-size: 14px;
+                font-weight: 600;
+                color: white;
+                text-decoration: none;
+            }
         }
     }
-    .right {
+    .main-header {
         display: flex;
+        justify-content: space-between;
         align-items: center;
-        gap: 15px;
-        .round {
-            width: 38px;
-            height: 38px;
-            background-color: gray;
-            &:hover {
-                background-color: orange;
-            }   
+        gap: 30px;
+        padding: 10px 200px;
+        width: 100%;
+
+        form {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 5px;   
+            border: 1px solid #33333333;
+            padding: 5px;            
+            border-radius: 4px;
+            width: 100%;
+            max-width: 700px;
+            input {
+                all: unset;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 50%;            
+            gap: 20px;
+            a {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 5px;
+                font-size: 14px;
+                font-weight: 600;
+                color: #333333;
+                text-decoration: none;
+            }
         }
     }
 }
