@@ -1,12 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+      .hedercart {
+        display: flex;
+        gap: 30px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        margin: 30px auto;
+      }
+      .hederleft {
+        display: flex;
+        gap: 40px;
+      }
+      .hederleft span {
+        color: #007aff;
+      }
+      .contsmall {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 40px 0;
+        width: 80%;
+        margin: 0 auto;
+      }
+      .contsmall p {
+        width: 500px;
+      }
+      .contsmall button {
+        width: 180px;
+        padding: 15px 0;
+        border-radius: 5px;
+        border: none;
+        background-color: #e31235;
+        color: white;
+      }
+      .contbig {
+        background-color: #f5f5f6;
+        width: 100%;
+      }
+      .contsmall span {
+        color: #007aff;
+      }
+      .footer {
+        display: flex;
+        justify-content: space-between;
+
+        background-color: #333;
+        color: gray;
+        padding: 40px;
+      }
+      .footerleft {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .footerleftp {
+        display: flex;
+        gap: 20px;
+      }
+      .cont2cart {
+        display: flex;
+        width: 80%;
+        margin: 40px auto;
+        justify-content: space-between;
+      }
+      .cont2cart4r {
+        display: flex;
+        height: 50px;
+        gap: 10px;
+      }
+      .cont2cart4 {
+        padding: 20px;
+        display: flex;
+        width: 100%;
+        background-color: #f5f5f6;
+      }
+      .cont2cart4l {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+    </style>
+
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <div class="hedercart">
+      <div class="hederleft">
+        <p>Вернуться к покупкам</p>
+        <p>Ваш город:<span> Москва</span></p>
+      </div>
+      <div class="hedermidl">
+        <img
+          src="https://cms.mvideo.ru/magnoliaPublic/dam/jcr:3c0c7e7e-d07f-4ecd-aa6d-6c4d11cda8f7"
+        />
+      </div>
+      <div></div>
+      <div class="hederright">
+        <p>Чат</p>
+      </div>
+    </div>
+    <div class="contbig">
+      <div class="contsmall">
+        <h1>Корзина пуста</h1>
+        <p>
+          Если вы наполняли корзину при прошлом визите, авторизуйтесь, чтобы
+          увидеть выбранные товары
+        </p>
+        <p>
+          Акции, специальные предложения и обзоры на
+          <span>главной странице</span> помогут вам найти подходящие товары
+        </p>
+        <button>Авторизоваться</button>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footerleft">
+        <p>© «М.Видео», 2022</p>
+        <div class="footerleftp">
+          <p>Официальная информация</p>
+          <p>Раскрытие информации</p>
+          <p>8-800-600-7775</p>
+        </div>
+      </div>
+      <div class="footerright">
+        <img
+          src="https://cms.mvideo.ru/magnoliaPublic/dam/jcr:0bb24fe4-cd73-48d6-b0dc-f3d254008547"
+        />
+      </div>
+    </div>
+  </body>
 </html>
