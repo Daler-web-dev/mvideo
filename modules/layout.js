@@ -60,7 +60,7 @@ export const layout = (place) => {
                     <img src="./public/icons/heart.svg" alt="">
                     <span>Избранное</span>
                 </a>
-                <a href="">
+                <a href="../pages/cart.html">
                     <img src="./public/icons/shopping-cart.svg" alt="">
                     <span>Корзина</span>
                 </a>
