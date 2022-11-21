@@ -3,7 +3,7 @@ let url = "http://localhost:7777/goods"
 
 axios.get(url)
     .then(res => {
-        reload(res.data)
+        // reload(res.data)
     })
 
 const reload = (arr) => {
@@ -77,8 +77,5 @@ const reload = (arr) => {
             window.location.assign('productid.html')
             localStorage.setItem("id", item.id)
         }
-
     }
-
-
 }
