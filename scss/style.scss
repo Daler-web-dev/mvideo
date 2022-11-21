@@ -177,3 +177,92 @@ footer {
         gap: 15px;
     }
 }
+
+main {
+    width: 80%;
+    margin: 0 auto;
+
+    .product {
+        display: flex;
+        gap: 200px;
+        .productImg {
+            width: 550px;
+            height: 550px;
+        }
+        .info {
+            .title {
+                font-size: 28px;
+                font-weight: 700;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .products {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin: 100px 0px;
+
+        .box {
+            width: 200px;
+            cursor: pointer;
+            .title-img {
+                width: 160px;
+                height: 160px;
+            }
+            .title {
+                font-size: 14px;
+                margin-top: 24px;
+                margin-bottom: 10px;
+            }
+            .reating {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                margin-bottom: 10px;
+                .reating_star {
+                    width: 15px;
+                    height: 15px;
+                }
+                p {
+                    font-size: 14px;
+                }
+            }
+            .price {
+                display: flex;
+                gap: 10px;
+                margin-bottom: 5px;
+                align-items: center;
+                .current_price {
+                    font-size: 20px;
+                }
+                .old_price {
+                    font-size: 16px;
+                    color: gray;
+                    text-decoration: line-through;
+                }
+            }
+            .box_bot {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-top: 15px;
+                img {
+                    filter: invert(100%);
+                    cursor: pointer;
+                    transition: .2s ease;
+                    &:hover {
+                        filter: invert(70%);
+                    }
+                }
+                .like {
+                    filter: invert(80%);
+                }
+                .chart {
+                    filter: invert(80%);
+                }
+            }
+        }
+    }
+}
