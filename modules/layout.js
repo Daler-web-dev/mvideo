@@ -1,4 +1,4 @@
-const layout = (place) => {
+export const layout = (place) => {
   place.innerHTML = `
         <nav class="top-nav" >
             <div class="left">
@@ -85,7 +85,7 @@ let fourth_arr = [ "Как установить «Сбербанк Онлайн�
 let last_arr = [ "КОНТАКТЫ", "Канал Viber", "Telegram"]
 
 
-function footerReaload (arr, place) {
+export function footerReaload (arr, place) {
     for(let item of arr){
         let link = document.createElement("a")
         link.href = "https://www.mvideo.ru/"

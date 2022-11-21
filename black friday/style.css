@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif
+}
+body{
+    background-color: #F5F5F6;
+}
+.container{
+    width: 1520px;
+    margin: 0 auto;
+}
+.grid{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 430px;
+    grid-gap: 50px 25px;
+}
+.imgblock{
+    width: 100%;
+    height: 527px;
+    background-image: url("https://static.mvideo.ru/media/Promotions/Promo_Page/2022/October/chyornaya-pyatnica-skidki/img/bf/banner-desktop-2111.png");
+    background-size: contain;
+}
+.btnsblock{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 50px auto 100px;
+    width: fit-content;
+}
+.top-btns{
+    background-color: transparent;
+    padding: 6px 16px;
+    border-radius: 16px;
+    border: 1px solid #333333;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    transition: 500ms;
+}
+.top-btns:hover{
+    background-color: black;
+    color: white;
+}
+.h1{
+    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+    width: 1100px;
+    text-align: center;
+    margin: 0 auto 100px;
+}
+.bestprice{
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    color: #333333;
+    padding-left: 10px;
+    margin-bottom: 37px;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 50px;
+}
+.item{
+    box-shadow: 0 0 5px #c4c4c4;
+    border-radius: 10px;
+    padding: 30px;
+    background-color: white;
+}
+.items{
+    box-shadow: 0 0 5px #c4c4c4;
+    border-radius: 10px;
+    padding: 30px;
+    background-color: white;
+}
+.item:nth-child(n + 9) {
+    display: none;
+}
+
+.top{
+    height: 75%;
+    position: relative;
+}
+.title{
+    font-family: 'Roboto', sans-serif;
+}
+.img{
+    height: 160px;
+    object-fit: contain;
+    position: absolute;
+    left: 50%;
+    top: 70px;
+    transform: translateX(-50%);
+}
+.bottom{
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.oldprice{
+    text-decoration-line: line-through;
+    color: rgb(124 124 124);
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+.saleprice{
+    font-size: 26px;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+}
+.btn{
+    width: 145px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: #e31235;
+    color: rgb(255 255 255);
+    font-size: 16px;
+    padding: 5px 24px;
+    border: none;
+    cursor: pointer;
+    transition: 500ms;
+}
+.btn:hover{
+    background-color: #AB0E1C;
+}
+.timerbg{
+    height: 385px;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+    margin: 100px 0;
+    background-image: url("https://static.mvideo.ru/media/Promotions/Promo_Page/2022/October/chyornaya-pyatnica-skidki/img/bf/bg-timer.png");
+}
+.timertext{
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+.timerblock{
+    padding: 80px 0 50px;
+}
+.timers{
+    display: flex;
+    width: fit-content;
+    margin: 20px auto 0;
+}
+.dayblock{
+    display: flex;
+}
+.dayblock{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 2px solid #c4c4c450;
+    width: fit-content;
+}
+.timer{
+    font-weight: 700;
+    font-size: 130px;
+    line-height: 152px;
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    margin: 0 30px;
+}
+.daytext{
+    color: white;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+}
+.bordernone{
+    border: none;
+}
+.grid2{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 430px;
+    grid-gap: 50px 25px;
+}
+.saleblock{
+    border: 1px solid #e31235;
+    background-color: white;
+    width: 748px;
+    height: 146px;
+    margin: 80px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 44px 41px 44px 24px;
+    box-shadow: 10px 10px 30px rgb(174 174 192 / 20%);
+    border-radius: 8px;
+}
+.saleimg{
+    width: 56px;
+    height: 56px;
+    background-size: contain;
+    background-image: url("https://static.mvideo.ru/media/Promotions/Promo_Page/2022/August/shkolnaya-rasprodazha/img/school/icons/percent.svg");
+}
+.saleleft{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.produtsale{
+    font-size: 26px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+.see{
+    padding: 13px 24px;
+    background-color: #e31235;
+    border: none;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 500ms;
+}
+.see:hover{
+    background-color: #AB0E1C;
+}
+.swiper {
+    width: 1400px;
+    height: 272px;
+    margin-bottom: 50px;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .img1{
+    background-size: contain;
+    background-image: url("https://static.mvideo.ru/media/Promotions/Promo_Page/2022/November/chyornaya-pyatnica-skidki-do-na-stiralnye-mashiny-indesit-i-hotpoint/Wide%202800x544.png");
+  }
+  .img2{
+    background-size: contain;
+    background-image: url("https://static.mvideo.ru/media/Promotions/Promo_Page/2022/September/skidka-10-na-komplekt-krupnoi-bytovoi-tehniki-haier-mark200506720/Wide%202800x544.png");
+  }
+  .bottom-block{
+    display: flex;
+    gap: 25px;
+    margin-bottom: 50px;
+  }
+  .bottom-left{
+    width: 385px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .bottom-text{
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+  }
+  .bottom-text2{
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+  }
+  .inp{
+    width: 292px;
+    height: 48px;
+    padding: 0 18px;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+  }
+  .send{
+    width: 292px;
+    height: 48px;
+    background-color: #e31235;
+    transition: 500ms;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+  }
+  .bottom-right{
+    display: flex;
+    align-items: center;
+  }
+  .send:hover{
+    background-color: #AB0E1C;
+  }
