@@ -1,0 +1,190 @@
+main {
+    width: 80%;
+    margin: 0 auto;
+    padding: 100px 0;
+
+    .product {
+        .bitchsukablyat {
+            display: flex;
+            gap: 10px;
+            .productImg {
+                width: 550px;
+                height: 550px;
+                margin-top: -100px;
+                position: sticky;
+                top: 5%;
+                left: 10px;
+            }
+            .info {
+                .title {
+                    width: 700px;
+                    font-size: 28px;
+                    font-weight: 700;
+                    margin-bottom: 20px;
+                }
+            }
+            .buy {
+                margin-top: 100px;
+                margin-left: -580px;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-end;
+                margin-bottom: 100px;
+                .login {
+                    width: 300px;
+                    height: 70px;
+                    background-color: #f5f5f6;
+                    padding: 16px 24px;
+                    border-radius: 0.8rem;
+                    width: 300px;
+                    span {
+                        color: blue;
+                        font-weight: 600;
+                    }
+                }
+                .price-block {
+                    padding: 24px;
+                    background-color: #f5f5f6;
+                    width: 300px;
+                    border-radius: 0.8rem;
+                    .priceTobuy {
+                        margin-bottom: 20px;
+                        font-size: 28px;
+                        font-weight: 600;
+                    }
+                }
+                .found_cheaper {
+                    padding: 24px;
+                    background-color: #f5f5f6;
+                    width: 300px;
+                    border-radius: 0.8rem;
+                }
+                .cash_back {
+                    padding: 24px;
+                    background-color: #f5f5f6;
+                    width: 300px;
+                    border-radius: 0.8rem;
+                    p {
+                        width: 188px;
+                    }
+                    span {
+                        font-weight: 600;
+                    }
+                }
+                .credit {
+                    padding: 24px;
+                    background-color: #f5f5f6;
+                    border-radius: 0.8rem;
+                    display: flex;
+                    flex-direction: column;
+                    width: 300px;
+                    gap: 20px;
+                }
+                .dostavka {
+                    padding: 24px;
+                    background-color: #f5f5f6;
+                    width: 300px;
+                    border-radius: 0.8rem;
+                }
+                .recomindation {
+                    display: flex;
+                    gap: 35px;
+                    .left_rec {
+                        p {
+                            font-size: 28px;
+                            font-weight: 600;
+                        }
+                        padding: 24px;
+                        background-color: #f5f5f6;
+                        border-radius: 0.8rem;
+                    }
+                    .right_rec {
+                        p {
+                            font-size: 28px;
+                            font-weight: 600;
+                        }
+                        padding: 24px;
+                        background-color: #f5f5f6;
+                        border-radius: 0.8rem;
+                    }
+                }
+            }
+        }
+        .xar {
+            p {
+                font-size: 28px;
+                font-weight: 600;
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+    .products {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin: 100px 0px;
+
+        .box {
+            width: 200px;
+            cursor: pointer;
+            .title-img {
+                width: 160px;
+                height: 160px;
+            }
+            .title {
+                font-size: 14px;
+                margin-top: 24px;
+                margin-bottom: 10px;
+            }
+            .reating {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                margin-bottom: 10px;
+                .reating_star {
+                    width: 15px;
+                    height: 15px;
+                }
+                p {
+                    font-size: 14px;
+                }
+            }
+            .price {
+                display: flex;
+                gap: 10px;
+                margin-bottom: 5px;
+                align-items: center;
+                .current_price {
+                    font-size: 20px;
+                }
+                .old_price {
+                    font-size: 16px;
+                    color: gray;
+                    text-decoration: line-through;
+                }
+            }
+            .box_bot {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-top: 15px;
+                img {
+                    filter: invert(100%);
+                    cursor: pointer;
+                    transition: .2s ease;
+                    &:hover {
+                        filter: invert(70%);
+                    }
+                }
+                .like {
+                    filter: invert(80%);
+                }
+                .chart {
+                    filter: invert(80%);
+                }
+            }
+        }
+    }
+}

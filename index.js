@@ -3,7 +3,7 @@ let url = "http://localhost:7777/goods"
 
 axios.get(url)
     .then(res => {
-        // reload(res.data)
+        reload(res.data)
     })
 
 const reload = (arr) => {
@@ -49,7 +49,9 @@ const reload = (arr) => {
         like.classList.add("like")
         chart.classList.add("chart")
 
-
+        if(item.salePercentage == 0){
+            old_price.style.display = 'none'
+        }
         img.src = item.media[0]
     
         title.innerHTML = item.title
@@ -72,10 +74,16 @@ const reload = (arr) => {
         box.append(img, title, reating, price, sth, box_bot)
         products.append(box)
 
-
-        box.onclick = () => {
-            window.location.assign('productid.html')
-            localStorage.setItem("id", item.id)
+        img.onclick = () => {
+            openProduct(item)
+        }
+        btn_bot.onclick = () => {
+            openProduct(item)
         }
     }
+}
+
+function openProduct(item) {
+    window.location.assign('productid.html')
+    localStorage.setItem("id", item.id)
 }
