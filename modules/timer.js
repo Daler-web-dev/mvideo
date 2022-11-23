@@ -1,16 +1,4 @@
-const deadline = "2022-12-31"
-
-
-// usage: Asia/Jakarta is GMT+7
-
-// Resulting value is regular Date() object
-// const convertedDate = convertTZ("2012/04/20 10:10:30 +0000", "Asia/Jakarta") 
-// convertedDate.getHours(); // 17
-
-// Bonus: You can also put Date object to first arg
-// const date = new Date()
-// convertTZ(date, "Asia/Jakarta") // current date-time in jakarta.
-
+const deadline = "2022-12-31 23:59"
 
 const getReaminingTime = (endTime) => {
     const t = Date.parse(endTime) - Date.parse(new Date()),
