@@ -77,7 +77,7 @@ const reload = (arr) => {
         img.onclick = () => {
             openProduct(item)
         }
-        btn_bot.onclick = () => {
+        title.onclick = () => {
             openProduct(item)
         }
     }
