@@ -1,11 +1,31 @@
 let products = document.querySelector(".products");
+let blackProductsPalce = document.querySelector(".blackProducts");
+let hightRatProducts = document.querySelector(".hightRatProducts");
+let hightPriceProducts = document.querySelector(".hightPriceProducts");
 let url = "http://localhost:7777/goods";
 
-axios.get(url).then((res) => {
-  reload(res.data);
-});
 
-const reload = (arr) => {
+
+let toCartId = []
+
+axios.get(url)
+    .then((res) => {
+        blackProducts = res.data.filter(item => item.isBlackFriday == true)
+        reload(blackProducts.slice(1, 8), blackProductsPalce, '#333333')
+        hifhprProducts = res.data.filter(item => item.type == "kitchen")
+        reload(hifhprProducts.slice(1, 8), hightPriceProducts, 'red')
+        hightratingProducts = res.data.filter(item => item.rating >= 4.5 && item.type == "audio")
+        reload(hightratingProducts.slice(1, 8), hightRatProducts, 'red')
+        forzadrot = res.data.filter(item => item.type == "PC")
+        reload(forzadrot.slice(1, 8), products, 'red');
+    });
+
+    let forzadrot = []
+    let blackProducts = []
+    let hifhprProducts = []
+    let hightratingProducts = []
+
+const reload = (arr, place, colorr) => {
   for (let item of arr) {
     let countOfRating = Math.round(item.rating);
     let discount = item.price - (item.salePercentage * item.price) / 100;
@@ -48,6 +68,7 @@ const reload = (arr) => {
     like.classList.add("like");
     chart.classList.add("chart");
 
+
     if (item.salePercentage == 0) {
       old_price.style.display = "none";
     }
@@ -55,12 +76,14 @@ const reload = (arr) => {
 
     title.innerHTML = item.title;
 
+    btn_bot.style.background = colorr
     reating_star.src = "./public/icons/star.svg";
     reating_num.innerHTML = item.rating;
     reating_count.innerHTML = `${countOfRating} отзывов`;
 
-    current_price.innerHTML = discount + "$";
-    old_price.innerHTML = item.price;
+    current_price.innerHTML = Math.round(discount) + "$";
+    old_price.innerHTML = Math.round(item.price);
+
     sth.src = "./public/icons/sth.png";
     btn_bot.innerHTML = `<img src="./public/icons/shopping-cart.svg">`;
     like.src = "./public/icons/heart.svg";
@@ -71,7 +94,7 @@ const reload = (arr) => {
     box_bot.append(btn_bot, like, chart);
 
     box.append(img, title, reating, price, sth, box_bot);
-    products.append(box);
+    place.append(box);
 
     img.onclick = () => {
       openProduct(item);
@@ -79,6 +102,12 @@ const reload = (arr) => {
     title.onclick = () => {
       openProduct(item);
     };
+
+    btn_bot.onclick = () => {
+        toCartId.push(item.id)
+        console.log(toCartId);
+    }
+
   }
 };
 

@@ -120,7 +120,7 @@ main {
         }
     }
 
-    .products {
+    .products, .blackProducts,.hightRatProducts, .hightPriceProducts{
         display: flex;
         gap: 15px;
         flex-wrap: wrap;
