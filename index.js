@@ -68,6 +68,7 @@ const reload = (arr, place, colorr) => {
     like.classList.add("like");
     chart.classList.add("chart");
 
+
     if (item.salePercentage == 0) {
       old_price.style.display = "none";
     }
@@ -76,13 +77,13 @@ const reload = (arr, place, colorr) => {
     title.innerHTML = item.title;
 
     btn_bot.style.background = colorr
-
     reating_star.src = "./public/icons/star.svg";
     reating_num.innerHTML = item.rating;
     reating_count.innerHTML = `${countOfRating} отзывов`;
 
     current_price.innerHTML = Math.round(discount) + "$";
     old_price.innerHTML = Math.round(item.price);
+
     sth.src = "./public/icons/sth.png";
     btn_bot.innerHTML = `<img src="./public/icons/shopping-cart.svg">`;
     like.src = "./public/icons/heart.svg";
@@ -106,6 +107,7 @@ const reload = (arr, place, colorr) => {
         toCartId.push(item.id)
         console.log(toCartId);
     }
+
   }
 };
 
