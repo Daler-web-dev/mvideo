@@ -1,71 +1,95 @@
 let basket = document.querySelector('.basket-left')
+let data = JSON.parse(localStorage.getItem('liked')) || []
+let url = "http://localhost:7777/goods";
 
-for (let i = 0; i <= 3; i++) {
-    let n = 1
-    let basket_left = document.createElement('div')
-    let left = document.createElement('div')
-    let right = document.createElement('div')
-    let left_img = document.createElement('img')
-    let info = document.createElement('div')
-    let info_p_one = document.createElement('p')
-    let info_p_two = document.createElement('p')
-    let cc = document.createElement('div')
-    let price = document.createElement('div')
-    let counter = document.createElement('div')
-    let num = document.createElement('p')
-    let minus = document.createElement('div')
-    let plus = document.createElement('div')
-    let del = document.createElement('div')
-    let favorite = document.createElement('div')
+console.log(data);
 
+axios.get(url)
+    .then(res => {
+        let temp = []
 
-    basket_left.classList.add('basket_left')
-    left_img.src = "../public/apple.png"
-    info.classList.add('info')
-    left.classList.add('left')
-    right.classList.add('right')
-    info_p_one.classList.add('title')
-    info_p_one.innerHTML = 'Ноутбук игровой Thunderobot 911 Air D (JT0098E06RU)'
-    info_p_two.innerHTML = 'Добавить аксессуар'
-    info_p_two.classList.add('add')
-    price.classList.add('price')
-    counter.classList.add('counter')
-    minus.classList.add('minus')
-    num.classList.add('num')
-    plus.classList.add('plus')
-    minus.innerHTML = '-'
-    num.innerHTML = 1
-    plus.innerHTML = '+'
-    del.classList.add('delete')
-    favorite.classList.add('favorite')
-    del.innerHTML = 'Удалить'
-    favorite.innerHTML = 'В изображеные'
-    price.innerHTML = 22999
+        for(let item of res.data) {
+            for(let id of data) {
+                if(item.id === id) {
+                    temp.push(item)
+                }
+            }
+        }
 
-    left.append(left_img, info)
-    info.append(info_p_one, info_p_two)
-    right.append(cc, price)
-    cc.append(counter)
-    counter.append(minus, num, plus)
-    basket_left.append(left, right)
-    basket.prepend(basket_left)
+        reloadCartItems(temp, basket)
+    })
 
-    plus.onclick = () => {
-        n++
-        num.innerHTML = n
-    }
+const reloadCartItems = (arr, place) => {
+    place.innerHTML = ""
 
-    minus.onclick = () => {
+    console.log(arr, place);
 
-        if (n === 1) {
-            n = 1
-        } else {
-            n--
+    for (let item of arr) {
+        let n = 1
+        let basket_left = document.createElement('div')
+        let left = document.createElement('div')
+        let right = document.createElement('div')
+        let left_img = document.createElement('img')
+        let info = document.createElement('div')
+        let info_p_one = document.createElement('p')
+        let info_p_two = document.createElement('p')
+        let cc = document.createElement('div')
+        let price = document.createElement('div')
+        let counter = document.createElement('div')
+        let num = document.createElement('p')
+        let minus = document.createElement('div')
+        let plus = document.createElement('div')
+        let del = document.createElement('div')
+        let favorite = document.createElement('div')
+    
+    
+        basket_left.classList.add('basket_left')
+        left_img.src = item.media[0]
+        info.classList.add('info')
+        left.classList.add('left')
+        right.classList.add('right')
+        info_p_one.classList.add('title')
+        info_p_one.innerHTML = item.title
+        info_p_two.innerHTML = 'Добавить аксессуар'
+        info_p_two.classList.add('add')
+        price.classList.add('price')
+        counter.classList.add('counter')
+        minus.classList.add('minus')
+        num.classList.add('num')
+        plus.classList.add('plus')
+        minus.innerHTML = '-'
+        num.innerHTML = 1
+        plus.innerHTML = '+'
+        del.classList.add('delete')
+        favorite.classList.add('favorite')
+        del.innerHTML = 'Удалить'
+        favorite.innerHTML = 'В изображеные'
+        price.innerHTML = item.price
+    
+        left.append(left_img, info)
+        info.append(info_p_one, info_p_two)
+        right.append(cc, price)
+        cc.append(counter, del, favorite)
+        counter.append(minus, num, plus)
+        basket_left.append(left, right)
+        place.prepend(basket_left)
+    
+        plus.onclick = () => {
+            n++
             num.innerHTML = n
+        }
+    
+        minus.onclick = () => {
+    
+            if (n === 1) {
+                n = 1
+            } else {
+                n--
+                num.innerHTML = n
+            }
         }
     }
 }
-
 
 
 

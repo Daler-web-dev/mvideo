@@ -6,7 +6,7 @@ let url = "http://localhost:7777/goods";
 
 
 
-let toCartId = []
+let toCartId = JSON.parse(localStorage.getItem('liked')) || []
 
 axios.get(url)
     .then((res) => {
@@ -104,8 +104,13 @@ const reload = (arr, place, colorr) => {
     };
 
     btn_bot.onclick = () => {
-        toCartId.push(item.id)
-        console.log(toCartId);
+        if(toCartId.includes(item.id)) {
+          toCartId = toCartId.filter(el => el !== item.id)
+          localStorage.setItem('liked', JSON.stringify(toCartId))
+        } else {
+          toCartId.push(item.id)
+          localStorage.setItem('liked', JSON.stringify(toCartId))
+        }
     }
 
   }

@@ -7,7 +7,6 @@
 }
 .basket {
     width: 80%;
-    height: 170vh;
     margin: 0 auto;
     background-color: #F5F5F6FF;
     display: flex;
@@ -135,7 +134,7 @@
     .basket_right {
         margin-top: 10;
         width: 360px;
-        height: 400px;
+        height: fit-content;
         background-color: #fff;
         position: sticky;
         border-radius: 12px;

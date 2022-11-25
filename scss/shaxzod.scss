@@ -115,14 +115,12 @@
 
         .det_kor {
             font-size: 24px;
-            height: 25px;
             width: 100%;
             font-weight: 700;
             // color: rgb(33, 33, 33);
         }
 
         .t_l_r {
-            height: 25px;
             width: 100%;
             display: flex;
             justify-content: space-between;
@@ -134,7 +132,6 @@
         }
 
         .sale_l_r {
-            height: 25px;
             width: 100%;
             display: flex;
             justify-content: space-between;
@@ -146,7 +143,6 @@
         }
 
         .sale_l_r2 {
-            height: 25px;
             width: 100%;
             display: flex;
             justify-content: space-between;
@@ -179,7 +175,6 @@
         }
 
         .itogo_l_r {
-            height: 25px;
             width: 100%;
             display: flex;
             justify-content: space-between;
@@ -191,15 +186,15 @@
         }
 
         .but_oform {
-            height: 9%;
             width: 98%;
             background-color: var(--main-color);
-            margin: 40px auto;
+            margin: 10px auto;
             color: whitesmoke;
             font-weight: 600;
             border: none;
             border-radius: 5px;
             transition: 0.8s;
+            padding: 10px;
 
             &:hover {
                 background-color: white;
@@ -210,7 +205,6 @@
         }
 
         .but_kredit {
-            height: 9%;
             width: 98%;
             // background-color: var(--main-color);
             background-color: white;
@@ -222,6 +216,7 @@
             border: 2px solid var(--main-color);
             ;
             transition: 0.8s;
+            padding: 10px;
 
             &:hover {
                 background-color: var(--main-color);
