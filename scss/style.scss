@@ -269,23 +269,28 @@ main {
     padding: 30px 0px;
     height: 500px;
     background-color: #F5F5F6;
+
     .swip-custom {
         width: 80%;
         margin: 0 auto;
         height: 100%;
+
         .swiper {
             height: 100% !important;
             border-radius: 14px;
+
             .swiper-slide {
                 height: 100% !important;
             }
 
-            .swiper-button-next, .swiper-button-prev {
+            .swiper-button-next,
+            .swiper-button-prev {
                 width: 50px;
                 background-color: white !important;
                 opacity: 1;
                 border-radius: 100%;
                 cursor: pointer;
+
                 &::after {
                     font-size: 24px;
                     color: red;
@@ -293,6 +298,28 @@ main {
                 }
             }
 
+        }
+    }
+}
+
+
+.header_navigation {
+    max-width: 1940px;
+    height: 40px;
+    border-bottom: 1px solid #DFDEE2FF;
+
+    .header_navigation_links {
+        width: 80%;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        a {
+            color: #000;
+            font-size: 16px;
+            font-weight: 300;
+            text-decoration: none;
         }
     }
 }

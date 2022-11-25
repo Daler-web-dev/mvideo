@@ -97,3 +97,155 @@
 
     }
 }
+
+.basket_right {
+    height: 600px;
+    width: 360px;
+    // background-color: royalblue;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin: 0px auto;
+
+
+    .detll {
+        height: 100%;
+        width: 100%;
+        // background-color: #E31235;
+        padding: 25px 12px;
+
+        .det_kor {
+            font-size: 24px;
+            height: 25px;
+            width: 100%;
+            font-weight: 700;
+            // color: rgb(33, 33, 33);
+        }
+
+        .t_l_r {
+            height: 25px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+            font-weight: 600;
+            border-bottom: 2px rgb(70, 70, 70) dotted;
+            margin-top: 20px;
+        }
+
+        .sale_l_r {
+            height: 25px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+            font-weight: 550;
+            border-bottom: 2px rgb(70, 70, 70) dotted;
+            margin-top: 25px;
+        }
+
+        .sale_l_r2 {
+            height: 25px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 17px;
+            font-weight: 550;
+            // border-bottom: 2px rgb(70, 70, 70) dotted;   
+            margin-top: 15px;
+            border: none;
+
+
+        }
+
+        .sale_r2 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #414141;
+        }
+
+        .sale_inf {
+            font-size: 16px;
+            font-weight: 600;
+            color: #414141;
+            margin-top: 10px;
+            transition: 0.5s;
+
+            &:hover {
+                color: black;
+            }
+        }
+
+        .itogo_l_r {
+            height: 25px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 22px;
+            font-weight: 700;
+            border-bottom: 2px rgb(70, 70, 70) dotted;
+            margin-top: 25px
+        }
+
+        .but_oform {
+            height: 9%;
+            width: 98%;
+            background-color: var(--main-color);
+            margin: 40px auto;
+            color: whitesmoke;
+            font-weight: 600;
+            border: none;
+            border-radius: 5px;
+            transition: 0.8s;
+
+            &:hover {
+                background-color: white;
+                border: 2px solid var(--main-color);
+                ;
+                color: var(--main-color);
+            }
+        }
+
+        .but_kredit {
+            height: 9%;
+            width: 98%;
+            // background-color: var(--main-color);
+            background-color: white;
+            margin: 10px auto;
+            color: var(--main-color);
+            font-weight: 600;
+            border: none;
+            border-radius: 5px;
+            border: 2px solid var(--main-color);
+            ;
+            transition: 0.8s;
+
+            &:hover {
+                background-color: var(--main-color);
+                border: none;
+                color: white;
+            }
+        }
+
+        .anketa {
+            text-align: center;
+            font-weight: 600;
+            color: #414141;
+            margin-top: 15px;
+
+            transition: 0.5s;
+
+            &:hover {
+                color: black;
+            }
+        }
+
+
+
+
+
+    }
+}

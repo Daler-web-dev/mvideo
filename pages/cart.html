@@ -4,12 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
     <style>
-        * {
-            padding: 0px;
-            margin: 0px;
-            box-sizing: border-box;
-        }
+      * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+      }
+
       .hedercart {
         display: flex;
         gap: 30px;
@@ -19,13 +21,16 @@
         width: 80%;
         margin: 30px auto;
       }
+
       .hederleft {
         display: flex;
         gap: 40px;
       }
+
       .hederleft span {
         color: #007aff;
       }
+
       .contsmall {
         display: flex;
         flex-direction: column;
@@ -34,9 +39,11 @@
         width: 80%;
         margin: 0 auto;
       }
+
       .contsmall p {
         width: 500px;
       }
+
       .contsmall button {
         width: 180px;
         padding: 15px 0;
@@ -45,13 +52,16 @@
         background-color: #e31235;
         color: white;
       }
+
       .contbig {
         background-color: #f5f5f6;
         width: 100%;
       }
+
       .contsmall span {
         color: #007aff;
       }
+
       .footer {
         display: flex;
         justify-content: space-between;
@@ -60,32 +70,38 @@
         color: gray;
         padding: 40px;
       }
+
       .footerleft {
         display: flex;
         flex-direction: column;
         gap: 20px;
       }
+
       .footerleftp {
         display: flex;
         gap: 20px;
       }
+
       .cont2cart {
         display: flex;
         width: 80%;
         margin: 40px auto;
         justify-content: space-between;
       }
+
       .cont2cart4r {
         display: flex;
         height: 50px;
         gap: 10px;
       }
+
       .cont2cart4 {
         padding: 20px;
         display: flex;
         width: 100%;
         background-color: #f5f5f6;
       }
+
       .cont2cart4l {
         width: 40%;
         display: flex;
@@ -96,10 +112,11 @@
 
     <title>Document</title>
   </head>
-  <body>
+
+  <body id="cart" >
     <div class="hedercart">
       <div class="hederleft">
-        <p>Вернуться к покупкам</p>
+        <a class="back-home" href="../index.html">Вернуться к покупкам</a>
         <p>Ваш город:<span> Москва</span></p>
       </div>
       <div class="hedermidl">
@@ -112,6 +129,12 @@
         <p>Чат</p>
       </div>
     </div>
+
+    <div class="basket">
+      <div class="basket-left"></div>
+      <div class="basket_right"></div>
+    </div>
+
     <div class="contbig">
       <div class="contsmall">
         <h1>Корзина пуста</h1>
@@ -126,6 +149,7 @@
         <button>Авторизоваться</button>
       </div>
     </div>
+
     <div class="footer">
       <div class="footerleft">
         <p>© «М.Видео», 2022</p>
@@ -141,5 +165,7 @@
         />
       </div>
     </div>
+
+    <script src="../modules/card.js"></script>
   </body>
 </html>
