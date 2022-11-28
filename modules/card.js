@@ -2,30 +2,33 @@ let basket = document.querySelector('.basket-left')
 let data = JSON.parse(localStorage.getItem('liked')) || []
 let url = "http://localhost:7777/goods";
 
-console.log(data);
+let temp = []
+let receiptArr = []
 
-axios.get(url)
-    .then(res => {
-        let temp = []
+function fetchAll(arr) {
+    axios.get(url)
+        .then(res => {
+            temp = []
 
-        for(let item of res.data) {
-            for(let id of data) {
-                if(item.id === id) {
-                    temp.push(item)
+            for(let item of res.data) {
+                for(let id of arr) {
+                    if(item.id === id) {
+                        temp.push(item)
+                    }
                 }
             }
-        }
 
-        reloadCartItems(temp, basket)
-    })
+            reloadCartItems(temp, basket)
+        })
+}
+fetchAll(data)
 
 const reloadCartItems = (arr, place) => {
+    receiptArr = []
     place.innerHTML = ""
 
-    console.log(arr, place);
-
     for (let item of arr) {
-        let n = 1
+        item.qt = 1
         let basket_left = document.createElement('div')
         let left = document.createElement('div')
         let right = document.createElement('div')
@@ -58,13 +61,13 @@ const reloadCartItems = (arr, place) => {
         num.classList.add('num')
         plus.classList.add('plus')
         minus.innerHTML = '-'
-        num.innerHTML = 1
+        num.innerHTML = item.qt
         plus.innerHTML = '+'
         del.classList.add('delete')
         favorite.classList.add('favorite')
         del.innerHTML = 'Удалить'
         favorite.innerHTML = 'В изображеные'
-        price.innerHTML = item.price
+        price.innerHTML = item.price.toString().replace(/(\d)(?=(\d{3})+(\D|$))/g, '$1 ') + " ₽"
     
         left.append(left_img, info)
         info.append(info_p_one, info_p_two)
@@ -75,25 +78,55 @@ const reloadCartItems = (arr, place) => {
         place.prepend(basket_left)
     
         plus.onclick = () => {
-            n++
-            num.innerHTML = n
+            item.qt++
+            num.innerHTML = item.qt
+            price.innerHTML = (item.qt * item.price).toString().replace(/(\d)(?=(\d{3})+(\D|$))/g, '$1 ') + " ₽"
+            
+            let finded = receiptArr.find(el => el.id === item.id)
+
+            finded.qt = item.qt
+            calculate(receiptArr)
         }
     
         minus.onclick = () => {
-    
-            if (n === 1) {
-                n = 1
-            } else {
-                n--
-                num.innerHTML = n
+            if(item.qt > 1) {
+                item.qt--
             }
+            num.innerHTML = item.qt
+            price.innerHTML = (item.qt * item.price).toString().replace(/(\d)(?=(\d{3})+(\D|$))/g, '$1 ') + " ₽"
+
+            let finded = receiptArr.find(el => el.id === item.id)
+
+            finded.qt = item.qt
+            calculate(receiptArr)
         }
+
+        del.onclick = () => {
+            // temp = temp.filter(el => el.id !== item.id)
+            data = data.filter(el => el != item.id)
+
+            // console.log(temp);
+
+            localStorage.setItem('liked', JSON.stringify(data))
+            // reloadCartItems(temp, basket)
+            fetchAll(data)
+        }
+
+        receiptArr.push(item)
     }
+    calculate(receiptArr)
 }
 
+function calculate(arr) {
+    let total = 0
 
+    for(let item of arr) {
+        total += item.qt * item.price   
+    }
+    total = total.toString()
 
-
+    document.querySelector('.itogo_r').innerHTML = total.replace(/(\d)(?=(\d{3})+(\D|$))/g, '$1 ') + " ₽"
+}
 
 
 
