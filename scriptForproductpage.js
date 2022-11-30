@@ -1,4 +1,5 @@
-let id = localStorage.getItem("id");
+let id = window.location.search
+
 let url = "http://localhost:7777/goods";
 
 let title = document.querySelector(".title");
@@ -8,9 +9,10 @@ let bnt_to_cart = document.querySelector(".toCart");
 
 let toCartId = JSON.parse(localStorage.getItem("liked")) || [];
 
-axios.get(url + "/" + id).then((res) => reloadforProduct(res.data));
+axios.get(url + id).then((res) => reloadforProduct(res.data[0]));
 
 function reloadforProduct(arr) {
+  console.log(arr);
   title.innerHTML = arr.title;
 
   productImg.src = arr.media[0];
@@ -30,6 +32,5 @@ function reloadforProduct(arr) {
       toCartId.push(arr.id);
       localStorage.setItem("liked", JSON.stringify(toCartId));
     }
-    console.log(toCartId);
   };
 }

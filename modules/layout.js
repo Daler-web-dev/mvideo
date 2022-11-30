@@ -67,7 +67,6 @@ export const layout = (place) => {
                 </nav>
             </div>
             <div class="spisok">
-
             </div>
             <div class="header_navigation">
             <div class="header_navigation_links">
