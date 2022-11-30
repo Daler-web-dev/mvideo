@@ -4,7 +4,7 @@ let hightRatProducts = document.querySelector(".hightRatProducts");
 let hightPriceProducts = document.querySelector(".hightPriceProducts");
 let url = "http://localhost:7777/goods";
 
-
+let elasticItems = []
 
 let toCartId = JSON.parse(localStorage.getItem('liked')) || []
 
@@ -18,7 +18,10 @@ axios.get(url)
         reload(hightratingProducts.slice(1, 8), hightRatProducts, 'red')
         forzadrot = res.data.filter(item => item.type == "PC")
         reload(forzadrot.slice(1, 8), products, 'red');
+        elasticItems = reload(res.data)
     });
+
+console.log(elasticItems);
 
     let forzadrot = []
     let blackProducts = []
@@ -146,3 +149,21 @@ var swiperTwo = new Swiper(".mainSwiper", {
     mousewheel: true,
     keyboard: true,
 });
+
+
+
+// temur poisk
+
+document.querySelector('.elastic').oninput = function () {
+  let val = this.value.trim()
+  if (val != '') {
+    elasticItems.forEach(function (elem) {
+      if (elem.innerText.search(val) == -1) {
+        elem.classList.add('hide') 
+      }
+      else {
+        elem.classList.remove('hide') 
+      }
+    })
+  }
+}

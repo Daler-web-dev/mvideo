@@ -38,7 +38,7 @@ export const layout = (place) => {
                     </span>
                 </button>
                 <form action="">
-                    <input type="text" placeholder="Искать скидки в Черную пятницу" >
+                    <input type="text" placeholder="Искать скидки в Черную пятницу" class="elastic">
                     <button class="def-btn">
                         <img src="./public/icons/search.svg" alt="">
                     </button>
@@ -65,6 +65,9 @@ export const layout = (place) => {
                         <span>Корзина</span>
                     </a>
                 </nav>
+            </div>
+            <div class="spisok">
+
             </div>
             <div class="header_navigation">
             <div class="header_navigation_links">
